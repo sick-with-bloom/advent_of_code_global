@@ -1,4 +1,3 @@
-from pydoc import importfile
 from utils.datahandler import read_data
 
 def handle(data):
