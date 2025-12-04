@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>f03df48f-04ad-40c7-ae9f-7f47706c81c2</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>2025\Days\day01.py</StartupFile>
+    <StartupFile>2024\Days\day02.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,6 +25,10 @@
     <Compile Include="2021\Days\__init__.py" />
     <Compile Include="2022\Days\__init__.py" />
     <Compile Include="2023\Days\__init__.py" />
+    <Compile Include="2024\Days\day01.py" />
+    <Compile Include="2024\Days\day02.py" />
+    <Compile Include="2024\Days\day03.py" />
+    <Compile Include="2024\Days\day04.py" />
     <Compile Include="2024\Days\__init__.py" />
     <Compile Include="2025\Days\day01.py" />
     <Compile Include="2025\Days\day02.py" />
