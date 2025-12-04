@@ -5,41 +5,32 @@ def handle(data):
 	data = data.split("\n")
 	return data
 
-def day01(data):
+def solve(data, length = 12):
 	answer = 0
 	for line in data:
-		highest = 0
-		for i in range(len(line)):
-			for j in range(i + 1, len(line)):
-				num = int(line[i] + line[j])
-				if num > highest:
-					highest = num
-		answer += highest
-		print(line, highest)
+		c = 0
+		num = ""
+		while len(num) != length:
+			highest = 0
+			highestNum = "0"
+			charsLeft = length - len(num)
+			for i in range(c,len(line)-charsLeft+1):
+				if line[i] > highestNum:
+					highest = i
+					highestNum = line[i]
+			num += highestNum
+			c = highest + 1
+		answer += int(num)
 	return answer
 
+def day01(data):
+	return solve(data,2)
+
 def day02(data):
-	answer = 0
-	for line in data:
-		#line = list(line)
-		i = 0
-		while len(line) != 12:
-			num = line[:12]
-			testNum = line[:i] + line[i+1:]
-			testNum = testNum[:12]
-			print(i, num, testNum)
-			if int(testNum) >= int(num):
-				line = line[:i] + line[i+1:]
-				i -= 1
-				print("\t",line)
-			#input()
-			i += 1
-		answer += int(line)
-	return answer
+	return solve(data,12)
 
 
 data = read_data(__file__, "2025")
 data = handle(data)
-print(data)
 print(day01(data))
 print(day02(data))
