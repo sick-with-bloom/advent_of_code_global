@@ -34,8 +34,10 @@
     <Compile Include="2025\Days\day02.py" />
     <Compile Include="2025\Days\day03.py" />
     <Compile Include="2025\Days\day04.py" />
+    <Compile Include="2025\Days\day05.py" />
     <Compile Include="2025\Days\__init__.py" />
     <Compile Include="advent_of_code_global.py" />
+    <Compile Include="day05.py" />
     <Compile Include="utils\datahandler.py" />
     <Compile Include="utils\__init__.py" />
   </ItemGroup>
