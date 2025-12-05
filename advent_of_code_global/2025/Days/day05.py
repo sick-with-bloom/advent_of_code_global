@@ -54,6 +54,17 @@ def checkForOverlaps(old,new):
 	return overlaps
 
 def day02(data):
+	# can this handle 3 overlapping ranges?
+	# what happens in this situation:
+	#    11111111111
+	#           222222222222
+	#                     33333333333333
+	#
+	#
+	# it needs to become
+	#    1111111222222222233333333333333
+	# or
+	#    
 	answer = 0
 	ranges = []
 	for new in data[0]:
