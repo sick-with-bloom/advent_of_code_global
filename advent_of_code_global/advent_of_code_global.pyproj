@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>f03df48f-04ad-40c7-ae9f-7f47706c81c2</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>2025\Days\day05.py</StartupFile>
+    <StartupFile>utils\main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -35,9 +35,9 @@
     <Compile Include="2025\Days\day03.py" />
     <Compile Include="2025\Days\day04.py" />
     <Compile Include="2025\Days\day05.py" />
+    <Compile Include="2025\Days\day06.py" />
+    <Compile Include="2025\Days\day07.py" />
     <Compile Include="2025\Days\__init__.py" />
-    <Compile Include="advent_of_code_global.py" />
-    <Compile Include="day05.py" />
     <Compile Include="utils\datahandler.py" />
     <Compile Include="utils\__init__.py" />
   </ItemGroup>
@@ -207,6 +207,7 @@
     <Content Include="2025\Input\day22.txt" />
     <Content Include="2025\Input\day23.txt" />
     <Content Include="2025\Input\day24.txt" />
+    <Content Include="utils\main.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
