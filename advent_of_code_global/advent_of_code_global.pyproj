@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>f03df48f-04ad-40c7-ae9f-7f47706c81c2</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>2025\Days\day05.py</StartupFile>
+    <StartupFile>2025\Days\day08.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -35,6 +35,7 @@
     <Compile Include="2025\Days\day03.py" />
     <Compile Include="2025\Days\day04.py" />
     <Compile Include="2025\Days\day05.py" />
+    <Compile Include="2025\Days\day08.py" />
     <Compile Include="2025\Days\__init__.py" />
     <Compile Include="advent_of_code_global.py" />
     <Compile Include="day05.py" />
