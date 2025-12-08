@@ -18,6 +18,12 @@ def solve(data, part):
 			if time % 100 == 0:
 				answer += 1
 		elif part == 2:
+			print("current time:",time,line[1])
+			print("moving",line[0],direction)
+			print("left this lap")
+			# difference = end - time
+			# laps = difference // 100
+			# answer += laps
 			while time != end:
 				time += direction
 				if time % 100 == 0:
