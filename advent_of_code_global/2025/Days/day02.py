@@ -23,7 +23,7 @@ def isInvalid(code, repMin, repMax):
 	return False
 
 
-def day01(data):
+def part1(data):
 	invalid_codes = 0
 	for line in data:
 		#print(line)
@@ -37,7 +37,7 @@ def day01(data):
 
 	return invalid_codes
 
-def day02(data):
+def part2(data):
 	invalid_codes = 0
 	for line in data:
 		#print(line)
@@ -53,5 +53,5 @@ def day02(data):
 
 data = read_data(__file__, "2025")
 data = handle(data)
-#print(day01(data))
-print(day02(data))
+#print(part1(data))
+print(part2(data))

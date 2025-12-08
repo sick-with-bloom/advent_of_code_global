@@ -13,21 +13,15 @@ def part1(data):
 	answer = 0
 	circuits = {point:[] for point in data}
 	print(circuits)
-	for i in range(len(data)):
-		closest = inf
-		closestPoint = None
-		for j in range(len(data)):
-			dist = distance(data[i], data[j])
-			if dist != 0 and dist < closest and data[j] not in circuits[data[i]]:
-				closest = dist
-				closestPoint = data[j]
-			print(data[i], data[j], distance(data[i], data[j]))
+	
+	#for each point
+	#find its closest neighbour
+	#add neighbour to network of first point
 
-		circuits[data[i]].append(closestPoint)
-		circuits[closestPoint].append(data[i])
-		for _ in circuits.keys():
-			print(_,":",circuits[_])
-		input()
+	#bfs/dfs until empty, then move to next point not yet accumulated
+
+	for _ in circuits.keys():
+		print(_,":",circuits[_])
 	return answer
 
 def part2(data):
