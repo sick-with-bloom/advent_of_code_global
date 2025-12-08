@@ -7,6 +7,8 @@ def handle(data):
 	return data
 
 def isInvalid(code, repMin, repMax):
+	#iterate across sizes of possible sections
+	#from sections of 1, to sections of half-of-the-thing
 	for i in range(1,len(code)//2 + 1):
 		section = code[0:i]
 		valid = False
