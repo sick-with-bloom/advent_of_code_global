@@ -11,17 +11,13 @@ def distance(point1, point2):
 
 def part1(data):
 	answer = 0
-	circuits = {point:[] for point in data}
-	print(circuits)
 	
-	#for each point
-	#find its closest neighbour
-	#add neighbour to network of first point
-
-	#bfs/dfs until empty, then move to next point not yet accumulated
-
-	for _ in circuits.keys():
-		print(_,":",circuits[_])
+	boxes = data
+	distances = {tuple([boxes[i], boxes[j]]): distance(boxes[i], boxes[j])  for i in range(len(boxes)) for j in range(len(boxes)) if i != j}
+	distances = {k: v for k, v in sorted(distances.items(), key=lambda item: item[1])}
+	for d in distances.keys():
+		print(d, distances[d])
+	
 	return answer
 
 def part2(data):
