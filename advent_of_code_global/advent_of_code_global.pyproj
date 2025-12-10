@@ -37,6 +37,7 @@
     <Compile Include="2025\Days\day05.py" />
     <Compile Include="2025\Days\day08.py" />
     <Compile Include="2025\Days\day09.py" />
+    <Compile Include="2025\Days\day10.py" />
     <Compile Include="2025\Days\__init__.py" />
     <Compile Include="utils\datahandler.py" />
     <Compile Include="utils\main.py" />
@@ -196,18 +197,6 @@
     <Content Include="2025\Input\day10.txt" />
     <Content Include="2025\Input\day11.txt" />
     <Content Include="2025\Input\day12.txt" />
-    <Content Include="2025\Input\day13.txt" />
-    <Content Include="2025\Input\day14.txt" />
-    <Content Include="2025\Input\day15.txt" />
-    <Content Include="2025\Input\day16.txt" />
-    <Content Include="2025\Input\day17.txt" />
-    <Content Include="2025\Input\day18.txt" />
-    <Content Include="2025\Input\day19.txt" />
-    <Content Include="2025\Input\day20.txt" />
-    <Content Include="2025\Input\day21.txt" />
-    <Content Include="2025\Input\day22.txt" />
-    <Content Include="2025\Input\day23.txt" />
-    <Content Include="2025\Input\day24.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
