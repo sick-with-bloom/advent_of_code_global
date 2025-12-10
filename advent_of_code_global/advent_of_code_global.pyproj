@@ -36,6 +36,7 @@
     <Compile Include="2025\Days\day04.py" />
     <Compile Include="2025\Days\day05.py" />
     <Compile Include="2025\Days\day08.py" />
+    <Compile Include="2025\Days\day09.py" />
     <Compile Include="2025\Days\__init__.py" />
     <Compile Include="utils\datahandler.py" />
     <Compile Include="utils\main.py" />

@@ -27,7 +27,6 @@ def day01(data):
 				picture[i][j] = "X"
 	for row in picture:
 		print("".join(row))
-				#input()
 	return count(picture)
 
 def day02(data):
