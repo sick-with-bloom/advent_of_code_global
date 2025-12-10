@@ -9,7 +9,7 @@ def handleInput(data):
 
 def handleLine(data):
 	data = data.split(" ")
-	data = [data[0][1:-1], data[1:-1]]
+	data = [data[0][1:-1], data[1:-1], data[-1]]
 	data[1] = [tuple([int(num) for num in line[1:-1].split(",")]) for line in data[1]]
 	return data
 
@@ -30,10 +30,9 @@ def display(states):
 			end = start[transition]
 			print("\t",transition,"==>",end)
 
-def solve(data):
+def solve1(data):
 	answer = 0
 	endState = data[0]
-	print("end state =",endState)
 	buttons = data[1]
 	length = len(endState)
 	states = {}
@@ -70,9 +69,7 @@ def solve(data):
 def part1(data):
 	answer = 0
 	for line in data:
-		print(line)
-		answer_ = solve(line)
-		print(answer_)
+		answer_ = solve1(line)
 		answer += answer_
 	return answer
 
@@ -83,6 +80,5 @@ def part2(data):
 
 data = read_data(__file__, "2025")
 data = handleInput(data)
-print(data)
 print(part1(data))
 print(part2(data))
