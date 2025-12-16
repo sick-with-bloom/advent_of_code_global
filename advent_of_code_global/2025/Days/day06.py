@@ -34,17 +34,29 @@ def part2(data):
 	for i in range(len(operators)):
 		if operators[i] != " ":
 			columnBreaks.append(i)
+	columnBreaks.append(0)
 
-	realData = [[],[],[]]
+	operands = data[:-1]
+	realData = [[] for cb in columnBreaks]
+	print(operands)
+	for _ in operands: print(_)
 	for i in range(len(columnBreaks) - 1):
-		realData[0].append(data[0][columnBreaks[i]:columnBreaks[i+1]-1])
-		realData[1].append(data[1][columnBreaks[i]:columnBreaks[i+1]-1])
-		realData[2].append(data[2][columnBreaks[i]:columnBreaks[i+1]-1])
+		for j in range(len(realData)):
+			realData[j].append(operands[j][columnBreaks[i]:columnBreaks[i+1]-1])
+
+	print(realData)
+
+	# print(data)
+	# realData = [[],[],[]]
+	# for i in range(len(columnBreaks) - 1):
+	# 	realData[0].append(data[0][columnBreaks[i]:columnBreaks[i+1]-1])
+	# 	realData[1].append(data[1][columnBreaks[i]:columnBreaks[i+1]-1])
+	# 	realData[2].append(data[2][columnBreaks[i]:columnBreaks[i+1]-1])
 
 
-	print(columnBreaks)
-	for row in realData:
-		print(row)
+	# print(columnBreaks)
+	# for row in realData:
+	# 	print(row)
 
 	return answer
 
