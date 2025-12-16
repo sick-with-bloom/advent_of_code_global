@@ -19,7 +19,6 @@ def day01(data):
 		for r in ranges:
 			if i in r:
 				spoiled = False
-				#print(f"{i} is in {r}")
 				break
 		if not spoiled:
 			answer += 1
@@ -28,30 +27,25 @@ def day01(data):
 
 def day02(data):
 	answer = 0
-	ranges = data[0]
-	ranges = sorted(ranges, key=lambda x:x[0])
+	lines = data[0]
+	lines = sorted(lines, key=lambda x:x[0])
 
-	merged_ranges = []
-	start = 0
-	end = 0
-	while start != len(ranges):
-		start_range = ranges[start]
-		end = start + 1
-		while end < len(ranges):
-			end_range = ranges[end]
-			if end_range[0] < start_range[1] < end_range[1]:
-				pass
+	fresh_lines = []
+
+	while any(lines[i][1] >= lines[j][0] for i in range(len(lines) - 1) for j in range(i + 1, len(lines))):
+		removals = 0
+		i = 0
+		while i < len(lines) - 1:
+			start = lines[i]
+			end = lines[i + 1]
+			if lines[i][1] >= lines[i+1][0]:
+				lines[i] = [start[0], max([start[1], end[1]])]
+				lines.pop(i+1)
+				removals += 1
 			else:
-
-
-
-
-
-	print("***",ranges)
-
+				i += 1
+	answer = sum([line[1] - line[0] + 1 for line in lines])
 	return answer
-	#336156454845765
-	#359913027576322
 
 	
 
@@ -59,6 +53,3 @@ data = read_data(__file__, "2025")
 data = handle(data)
 print(day01(data))
 print(day02(data))
-
-#wrong answer:
-#421613495822128
