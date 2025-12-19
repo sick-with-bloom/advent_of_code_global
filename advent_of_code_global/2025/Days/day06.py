@@ -1,3 +1,4 @@
+from math import prod
 from utils.datahandler import read_data
 
 def handle(data):
@@ -5,7 +6,6 @@ def handle(data):
 	data = [line.split(" ") for line in data]
 	data = [[_ for _ in line if _ != ""] for line in data]
 	data = [[int(_) if _.isdigit() else _ for _ in line ] for line in data]
-	print(data)
 	return data
 
 def part1(data):
@@ -19,10 +19,7 @@ def part1(data):
 				subAnswer *= operand
 			elif operator == "+":
 				subAnswer += operand
-			#print(operand,subAnswer)
 		answer += subAnswer
-			
-		#print(line,subAnswer)
 
 	return answer
 
@@ -30,21 +27,51 @@ def part2(data):
 	answer = 0
 	data = read_data(__file__, "2025").split("\n")
 	operators = data[-1]
+	operands = data[:-1]
 	columnBreaks = []
+
 	for i in range(len(operators)):
 		if operators[i] != " ":
 			columnBreaks.append(i)
 
-	realData = [[],[],[]]
-	for i in range(len(columnBreaks) - 1):
-		realData[0].append(data[0][columnBreaks[i]:columnBreaks[i+1]-1])
-		realData[1].append(data[1][columnBreaks[i]:columnBreaks[i+1]-1])
-		realData[2].append(data[2][columnBreaks[i]:columnBreaks[i+1]-1])
+	operators = list(_ for _ in operators if _ in ["+","*"])
+	realData = [[] for _ in operands]
 
+	for i in range(len(realData)):
+		row = operands[i]
+		for c in range(len(columnBreaks) - 1):
+			part = row[columnBreaks[c]:columnBreaks[c+1]-1]
+			start = columnBreaks[c]
+			end = columnBreaks[c+1]
+			realData[i].append(part)
+		lastPart = row[columnBreaks[-1]:]
+		realData[i].append(lastPart)
 
-	print(columnBreaks)
-	for row in realData:
-		print(row)
+	cols = [[] for _ in range(len(realData[i]))]
+
+	for i in range(len(cols)):
+		for r in range(len(realData)):
+			cols[i].append(realData[r][i])
+		cols[i].append(operators[i])
+
+	cols = [[list(num) for num in line] for line in cols]
+	cols = [[thing[::-1] for thing in line[::-1]] for line in cols[::-1]]
+
+	for line in cols:
+		numbers = line[1:]
+		operator = line[0][0]
+		nums = []
+		for i in range(len(numbers[0])):
+			num = ""
+			for j in range(len(numbers)-1,-1,-1):
+				num += numbers[j][i]
+			nums.append(int(num))
+		if operator == "+":
+			subAnswer = sum(nums)
+		else:
+			subAnswer = prod(nums)
+		#print(operator.join([str(num) for num in nums]),"=",subAnswer)
+		answer += subAnswer
 
 	return answer
 
