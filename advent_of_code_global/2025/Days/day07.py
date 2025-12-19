@@ -47,6 +47,7 @@ def part1(data):
 
 def part2(data):
 	answer = 0
+	print("!!!")
 
 	return answer
 
